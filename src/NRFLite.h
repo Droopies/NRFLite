@@ -17,7 +17,8 @@ class NRFLite {
     // Use the debug and debugln DEFINES in NRFLite.cpp to use the serial object.
     NRFLite() {}
     NRFLite(Stream &serial) : _serial(&serial) {}
-    
+    uint8_t readRPD(); // (TS) Test signal strength
+
     enum Bitrates { BITRATE2MBPS, BITRATE1MBPS, BITRATE250KBPS };
     enum SendType { REQUIRE_ACK, NO_ACK };
 

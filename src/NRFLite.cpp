@@ -106,6 +106,13 @@ void NRFLite::discardData(uint8_t unexpectedDataLength)
     }
 }
 
+uint8_t NRFLite::readRPD()
+{
+    startRx();
+    delayMicroseconds(50); 
+    return readRegister(0x09); 
+}
+
 uint8_t NRFLite::hasAckData()
 {
     // If we have a pipe 0 packet sitting at the top of the RX buffer, we have auto-acknowledgment data.
